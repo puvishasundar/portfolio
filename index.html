@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Puvisha Sundar - BCA Student | Web Developer | AI Enthusiast. Building innovative digital experiences through AI, web technologies, and creative problem solving." />
+  <meta name="keywords" content="Puvisha Sundar, Web Developer, AI Enthusiast, BCA, Portfolio, Machine Learning, Python, Java" />
+  <title>Puvisha Sundar — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950: '#020b18', 900: '#050f1f', 800: '#071628', 700: '#0a1e35' },
+            gold: { 300: '#fde68a', 400: '#f5c842', 500: '#d4a017', 600: '#b8860b' },
+          },
+          fontFamily: {
+            sora: ['Sora', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-outfit">
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loading-screen">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="loader-letter">P</span>
+        <span class="loader-dot"></span>
+        <span class="loader-letter">S</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-text font-mono">Initializing Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== PARTICLE CANVAS ========== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-text font-sora">PS</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#internships" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="profile/new puvisha resume.pdf" download class="btn-resume font-sora">
+        <i class="fas fa-download mr-2"></i> Resume
+      </a>
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#internships" class="mob-link">Experience</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#certifications" class="mob-link">Certifications</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero">
+    <!-- Ambient blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-container">
+      <!-- Profile Column -->
+      <div class="hero-image-col" data-aos="fade-right">
+        <div class="profile-frame-outer">
+          <div class="profile-frame-ring ring-1"></div>
+          <div class="profile-frame-ring ring-2"></div>
+          <div class="profile-frame-ring ring-3"></div>
+          <div class="profile-img-wrap">
+            <img src="profile/1.jpeg" alt="Puvisha Sundar" class="profile-img" />
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge badge-top">
+            <i class="fas fa-code"></i> Developer
+          </div>
+          <div class="float-badge badge-bottom">
+            <i class="fas fa-brain"></i> AI Enthusiast
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="hero-text-col" data-aos="fade-left">
+        <p class="hero-greeting font-mono">Hello, World! 👋</p>
+        <h1 class="hero-name font-sora">Puvisha <span class="gold-text">Sundar</span></h1>
+        <div class="hero-role-wrap">
+          <span class="hero-role-prefix">I am a </span>
+          <span class="typed-text" id="typed-text"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-tagline">"Building innovative digital experiences through AI, web technologies, and creative problem solving."</p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-btns">
+          <a href="profile/new puvisha resume.pdf" download class="btn-primary">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+          <a href="#projects" class="btn-secondary">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="#contact" class="btn-ghost">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero-socials">
+          <a href="https://github.com/puvishasundar" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/puvisha-sundar-79235737a/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:puvishasundar637@gmail.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:7339069632" class="social-icon" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down -->
+    <div class="scroll-down-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">Get to know me</p>
+        <h2 class="section-title font-sora">About <span class="gold-text">Me</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- About Text Card -->
+        <div class="glass-card about-card" data-aos="fade-right">
+          <div class="about-text-wrap">
+            <div class="about-quote-mark">"</div>
+            <p class="about-text">
+              Puvisha Sundar is a motivated BCA student passionate about <span class="gold-text">web development</span>, <span class="gold-text">artificial intelligence</span>, machine learning, and modern digital technologies.
+            </p>
+            <p class="about-text mt-4">
+              She enjoys building practical real-world applications that combine creativity with technical innovation. Her goal is to become a skilled developer and data science professional capable of creating impactful digital solutions.
+            </p>
+          </div>
+
+          <div class="about-details-grid">
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <p class="detail-label">Education</p>
+                <p class="detail-value">Bachelor of Computer Applications (BCA)</p>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-university"></i></div>
+              <div>
+                <p class="detail-label">College</p>
+                <p class="detail-value">Theivanai Ammal College for Women, Villupuram</p>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-calendar"></i></div>
+              <div>
+                <p class="detail-label">Duration</p>
+                <p class="detail-value">2024 – 2027</p>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-star"></i></div>
+              <div>
+                <p class="detail-label">CGPA</p>
+                <p class="detail-value gold-text font-sora" style="font-size:1.3rem;font-weight:700;">8.75</p>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <p class="detail-label">Location</p>
+                <p class="detail-value">Villupuram, Tamil Nadu</p>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <p class="detail-label">Email</p>
+                <p class="detail-value">puvishasundar637@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Visual -->
+        <div class="about-visual-col" data-aos="fade-left">
+          <div class="about-visual-card glass-card">
+            <div class="av-orbit-wrap">
+              <div class="av-center">
+                <i class="fas fa-user-astronaut" style="font-size:2rem;color:var(--gold);"></i>
+              </div>
+              <div class="av-orbit orbit-1">
+                <div class="av-planet" style="--angle:0deg"><i class="fab fa-python"></i></div>
+                <div class="av-planet" style="--angle:90deg"><i class="fab fa-java"></i></div>
+                <div class="av-planet" style="--angle:180deg"><i class="fas fa-brain"></i></div>
+                <div class="av-planet" style="--angle:270deg"><i class="fab fa-js"></i></div>
+              </div>
+              <div class="av-orbit orbit-2">
+                <div class="av-planet p2" style="--angle:45deg"><i class="fab fa-html5"></i></div>
+                <div class="av-planet p2" style="--angle:135deg"><i class="fas fa-database"></i></div>
+                <div class="av-planet p2" style="--angle:225deg"><i class="fab fa-github"></i></div>
+                <div class="av-planet p2" style="--angle:315deg"><i class="fas fa-code"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-passion-tags">
+            <span class="passion-tag"><i class="fas fa-laptop-code"></i> Web Dev</span>
+            <span class="passion-tag"><i class="fas fa-robot"></i> AI / ML</span>
+            <span class="passion-tag"><i class="fas fa-chart-line"></i> Data Science</span>
+            <span class="passion-tag"><i class="fas fa-lightbulb"></i> Innovation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS SECTION ========== -->
+  <section id="stats" class="section stats-section">
+    <div class="section-container">
+      <div class="stats-grid">
+        <div class="stat-card glass-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-icon-wrap"><i class="fas fa-certificate"></i></div>
+          <div class="stat-number font-sora" data-target="15" data-suffix="+">0</div>
+          <p class="stat-label">Certifications</p>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon-wrap"><i class="fas fa-project-diagram"></i></div>
+          <div class="stat-number font-sora" data-target="7" data-suffix="+">0</div>
+          <p class="stat-label">Projects</p>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-icon-wrap"><i class="fas fa-briefcase"></i></div>
+          <div class="stat-number font-sora" data-target="5" data-suffix="+">0</div>
+          <p class="stat-label">Internships</p>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-icon-wrap"><i class="fas fa-star"></i></div>
+          <div class="stat-number font-sora" data-target="8" data-suffix=".75" data-decimal="true">0</div>
+          <p class="stat-label">CGPA</p>
+          <div class="stat-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">What I work with</p>
+        <h2 class="section-title font-sora">Technical <span class="gold-text">Skills</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Programming -->
+        <div class="skill-category-card glass-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3 class="skill-cat-title font-sora">Programming</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">PHP</span>
+            <span class="skill-pill"><i class="fab fa-js-square"></i> JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Web Dev -->
+        <div class="skill-category-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-globe"></i></div>
+            <h3 class="skill-cat-title font-sora">Web Development</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="skill-pill"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="skill-pill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+          </div>
+        </div>
+
+        <!-- AI & ML -->
+        <div class="skill-category-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
+            <h3 class="skill-cat-title font-sora">AI &amp; ML</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fas fa-robot"></i> Machine Learning</span>
+            <span class="skill-pill"><i class="fas fa-brain"></i> Artificial Intelligence</span>
+            <span class="skill-pill"><i class="fas fa-chart-bar"></i> Data Science</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-tools"></i></div>
+            <h3 class="skill-cat-title font-sora">Databases &amp; Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fas fa-database"></i> MongoDB</span>
+            <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
+            <span class="skill-pill">Streamlit</span>
+            <span class="skill-pill">Power Automate</span>
+          </div>
+        </div>
+
+        <!-- Professional Skills - spans full width -->
+        <div class="skill-category-card glass-card skill-wide" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-users"></i></div>
+            <h3 class="skill-cat-title font-sora">Professional Skills</h3>
+          </div>
+          <div class="pro-skills-wrap">
+            <div class="pro-skill-badge"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
+            <div class="pro-skill-badge"><i class="fas fa-crown"></i> Leadership</div>
+            <div class="pro-skill-badge"><i class="fas fa-pen-fancy"></i> Creative Writing</div>
+            <div class="pro-skill-badge"><i class="fas fa-comments"></i> Communication</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTERNSHIPS SECTION ========== -->
+  <section id="internships" class="section dark-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">My journey</p>
+        <h2 class="section-title font-sora">Internship <span class="gold-text">Experience</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <div class="tc-company-icon"><i class="fas fa-rocket"></i></div>
+              <div>
+                <h3 class="tc-company font-sora">Yuva Intern</h3>
+                <p class="tc-roles">Java Internship &amp; Data Science Internship</p>
+              </div>
+            </div>
+            <p class="tc-desc">Completed comprehensive internship programs covering Java programming fundamentals and advanced data science concepts, building real-world projects and analytical skills.</p>
+            <div class="tc-tags">
+              <span class="tc-tag">Java</span>
+              <span class="tc-tag">Data Science</span>
+              <span class="tc-tag">Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <div class="tc-company-icon"><i class="fas fa-microchip"></i></div>
+              <div>
+                <h3 class="tc-company font-sora">Codec Technologies</h3>
+                <p class="tc-roles">Artificial Intelligence Internship</p>
+              </div>
+            </div>
+            <p class="tc-desc">Gained hands-on experience with AI algorithms, neural network fundamentals, and real-world AI application development under industry mentorship.</p>
+            <div class="tc-tags">
+              <span class="tc-tag">Artificial Intelligence</span>
+              <span class="tc-tag">Neural Networks</span>
+              <span class="tc-tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <div class="tc-company-icon"><i class="fas fa-magic"></i></div>
+              <div>
+                <h3 class="tc-company font-sora">Prodigy Infotech</h3>
+                <p class="tc-roles">Generative AI Internship</p>
+              </div>
+            </div>
+            <p class="tc-desc">Explored cutting-edge generative AI technologies, prompt engineering, and built creative AI-powered applications leveraging large language models.</p>
+            <div class="tc-tags">
+              <span class="tc-tag">Generative AI</span>
+              <span class="tc-tag">LLMs</span>
+              <span class="tc-tag">Prompt Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <div class="tc-company-icon"><i class="fas fa-layer-group"></i></div>
+              <div>
+                <h3 class="tc-company font-sora">Layercodes Technologies</h3>
+                <p class="tc-roles">Web Development &amp; Digital Marketing Intern</p>
+              </div>
+            </div>
+            <p class="tc-desc">Designed and developed responsive web applications while applying digital marketing strategies to enhance online presence and user engagement.</p>
+            <div class="tc-tags">
+              <span class="tc-tag">Web Development</span>
+              <span class="tc-tag">Digital Marketing</span>
+              <span class="tc-tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <div class="tc-company-icon"><i class="fas fa-robot"></i></div>
+              <div>
+                <h3 class="tc-company font-sora">CodSoft</h3>
+                <p class="tc-roles">Machine Learning Intern</p>
+              </div>
+            </div>
+            <p class="tc-desc">Implemented machine learning models for classification and regression tasks, worked with real datasets, and built end-to-end ML pipelines.</p>
+            <div class="tc-tags">
+              <span class="tc-tag">Machine Learning</span>
+              <span class="tc-tag">Python</span>
+              <span class="tc-tag">Scikit-learn</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">What I've built</p>
+        <h2 class="section-title font-sora">Featured <span class="gold-text">Projects</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="educational">Educational</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-card glass-card" data-category="ai python" data-aos="fade-up" data-aos-delay="0"
+             data-title="ScanLens"
+             data-desc="ScanLens is an AI-powered smart scanning and document analysis platform. It leverages computer vision and natural language processing to extract, interpret, and present information from scanned documents intelligently."
+             data-tech="Python,Streamlit,AI,Computer Vision"
+             data-live="https://scanlens-gc6b38nmq5wjqkigaxhbtv.streamlit.app/"
+             data-github="">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fas fa-search-plus"></i>
+              <span>ScanLens</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://scanlens-gc6b38nmq5wjqkigaxhbtv.streamlit.app/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">ScanLens</h3>
+              <div class="project-category-badge ai">AI / Python</div>
+            </div>
+            <p class="project-desc">AI-powered smart scanning and analysis platform with computer vision capabilities.</p>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Streamlit</span>
+              <span class="tech-badge">AI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://scanlens-gc6b38nmq5wjqkigaxhbtv.streamlit.app/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="educational web" data-aos="fade-up" data-aos-delay="50"
+             data-title="StudyMate"
+             data-desc="StudyMate is an intelligent educational platform designed to help students organize their studies, track progress, and access learning resources efficiently. It combines intuitive design with practical study tools."
+             data-tech="HTML,CSS,JavaScript,Web"
+             data-live="https://puvishasundar.github.io/study-mate/"
+             data-github="https://github.com/puvishasundar/study-mate">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #1a3a5c;">
+              <i class="fas fa-book-open"></i>
+              <span>StudyMate</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/study-mate/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">StudyMate</h3>
+              <div class="project-category-badge edu">Educational</div>
+            </div>
+            <p class="project-desc">Intelligent educational platform to organize studies and track learning progress.</p>
+            <div class="project-tech">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/study-mate/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="educational web" data-aos="fade-up" data-aos-delay="100"
+             data-title="MathMagic Royal"
+             data-desc="MathMagic Royal is an elegant, interactive mathematics learning application featuring engaging puzzles, step-by-step solutions, and gamified math challenges for students of all levels."
+             data-tech="HTML,CSS,JavaScript"
+             data-live="https://puvishasundar.github.io/MathMagic-Royal/"
+             data-github="https://github.com/puvishasundar/MathMagic-Royal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #1a2a1a;">
+              <i class="fas fa-calculator"></i>
+              <span>MathMagic Royal</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/MathMagic-Royal/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">MathMagic Royal</h3>
+              <div class="project-category-badge edu">Educational</div>
+            </div>
+            <p class="project-desc">Interactive math learning with puzzles, gamified challenges and step-by-step solutions.</p>
+            <div class="project-tech">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/MathMagic-Royal/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="ai web" data-aos="fade-up" data-aos-delay="150"
+             data-title="Mail Analyzer"
+             data-desc="Mail Analyzer is an AI-driven email analysis tool that classifies emails, detects spam, extracts key information, and provides actionable insights to help users manage their inboxes intelligently."
+             data-tech="HTML,CSS,JavaScript,AI"
+             data-live="https://puvishasundar.github.io/Mail-Analyzer/"
+             data-github="https://github.com/puvishasundar/Mail-Analyzer">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #1a1a3a;">
+              <i class="fas fa-envelope-open-text"></i>
+              <span>Mail Analyzer</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/Mail-Analyzer/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">Mail Analyzer</h3>
+              <div class="project-category-badge ai">AI / Web</div>
+            </div>
+            <p class="project-desc">AI-driven email classification and spam detection with smart inbox insights.</p>
+            <div class="project-tech">
+              <span class="tech-badge">AI</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">NLP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/Mail-Analyzer/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="web" data-aos="fade-up" data-aos-delay="200"
+             data-title="DeliciousCart"
+             data-desc="DeliciousCart is a premium food ordering web application with an elegant UI, cart management, category browsing, and a seamless checkout experience — crafted for food enthusiasts."
+             data-tech="HTML,CSS,JavaScript"
+             data-live="https://puvishasundar.github.io/Delicious-cart/"
+             data-github="https://github.com/puvishasundar/Delicious-cart">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #3a1a0a;">
+              <i class="fas fa-shopping-cart"></i>
+              <span>DeliciousCart</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/Delicious-cart/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">DeliciousCart</h3>
+              <div class="project-category-badge web">Web Dev</div>
+            </div>
+            <p class="project-desc">Premium food ordering app with elegant UI and seamless cart management.</p>
+            <div class="project-tech">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/Delicious-cart/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="educational" data-aos="fade-up" data-aos-delay="250"
+             data-title="Smart Bus Reminder"
+             data-desc="Smart Bus Reminder is a location-aware public transport assistant that sends intelligent notifications to commuters about upcoming bus arrivals, helping them never miss their ride."
+             data-tech="HTML,CSS,JavaScript"
+             data-live="https://puvishasundar.github.io/Smart-bus-remainder/"
+             data-github="https://github.com/puvishasundar/Smart-bus-remainder">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #0a2a3a;">
+              <i class="fas fa-bus-alt"></i>
+              <span>Smart Bus Reminder</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/Smart-bus-remainder/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">Smart Bus Reminder</h3>
+              <div class="project-category-badge edu">Educational</div>
+            </div>
+            <p class="project-desc">Location-aware bus notification assistant for smart commuting.</p>
+            <div class="project-tech">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/Smart-bus-remainder/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="java" data-aos="fade-up" data-aos-delay="300"
+             data-title="AddressBook"
+             data-desc="AddressBook is a full-featured Java desktop application for managing contacts with features including add, edit, delete, search, and export functionality with a clean Swing-based GUI."
+             data-tech="Java,Swing,OOP"
+             data-live=""
+             data-github="https://github.com/puvishasundar/AddressBook">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #2a1a3a;">
+              <i class="fas fa-address-book"></i>
+              <span>AddressBook</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/puvishasundar/AddressBook" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">AddressBook</h3>
+              <div class="project-category-badge java">Java</div>
+            </div>
+            <p class="project-desc">Full-featured Java desktop contact manager with Swing GUI and CRUD operations.</p>
+            <div class="project-tech">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Swing</span>
+              <span class="tech-badge">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/puvishasundar/AddressBook" target="_blank" class="proj-btn-live"><i class="fab fa-github"></i> GitHub</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" data-category="web" data-aos="fade-up" data-aos-delay="350"
+             data-title="Gallery"
+             data-desc="A beautifully designed personal gallery web app featuring smooth transitions, masonry layout, lightbox viewing, and an immersive browsing experience for showcasing visual content."
+             data-tech="HTML,CSS,JavaScript"
+             data-live="https://puvishasundar.github.io/Puvisha-s-gallery-/"
+             data-github="https://github.com/puvishasundar/Puvisha-s-gallery-">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--ph-color: #1a3a2a;">
+              <i class="fas fa-images"></i>
+              <span>Gallery</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://puvishasundar.github.io/Puvisha-s-gallery-/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title font-sora">Gallery</h3>
+              <div class="project-category-badge web">Web Dev</div>
+            </div>
+            <p class="project-desc">Elegant personal gallery with masonry layout, lightbox, and smooth transitions.</p>
+            <div class="project-tech">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://puvishasundar.github.io/Puvisha-s-gallery-/" target="_blank" class="proj-btn-live"><i class="fas fa-rocket"></i> Live Demo</a>
+              <button class="proj-btn-details" onclick="openModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <div class="modal-icon-wrap">
+        <div id="modal-icon" class="modal-icon"></div>
+      </div>
+      <h2 class="modal-title font-sora" id="modal-title"></h2>
+      <div id="modal-category" class="modal-cat-badge"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-tech-wrap" id="modal-tech"></div>
+      <div class="modal-btns" id="modal-btns"></div>
+    </div>
+  </div>
+
+  <!-- ========== CERTIFICATIONS SECTION ========== -->
+  <section id="certifications" class="section dark-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">Verified achievements</p>
+        <h2 class="section-title font-sora">Certifications &amp; <span class="gold-text">Credentials</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-code"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Advanced C++</h3>
+            <p class="cert-issuer">SoloLearn</p>
+          </div>
+          <a href="profile/c++ solo learn.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-users"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Enhancing Soft Skills &amp; Personality</h3>
+            <p class="cert-issuer">Professional Development</p>
+          </div>
+          <a href="profile/Enhancing Soft Skills and Personality.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-chart-bar"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">GenAI Powered Data Analytics</h3>
+            <p class="cert-issuer">Job Simulation Program</p>
+          </div>
+          <a href="profile/GenAl Powered Data Analytics Job Simulation.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fab fa-java"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Java Basic</h3>
+            <p class="cert-issuer">HackerRank</p>
+          </div>
+          <a href="profile/Phr java.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-check-circle"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Java Skill Test</h3>
+            <p class="cert-issuer">Assessment Platform</p>
+          </div>
+          <a href="profile/Java Skill Test.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fab fa-js"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">JavaScript Essentials</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+          </div>
+          <a href="profile/JavaScript_Essentials.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fab fa-microsoft"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Microsoft Canvas App</h3>
+            <p class="cert-issuer">Microsoft Power Platform</p>
+          </div>
+          <a href="profile/Microsoft Canvas App.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fab fa-microsoft"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Microsoft Model-Driven App</h3>
+            <p class="cert-issuer">Microsoft Power Platform</p>
+          </div>
+          <a href="profile/Microsoft Model-Driven App.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-bolt"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Microsoft Power Automate Flow</h3>
+            <p class="cert-issuer">Microsoft Power Platform</p>
+          </div>
+          <a href="profile/Microsoft Power Automate Flow.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="450">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-leaf"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">MongoDB Certificate</h3>
+            <p class="cert-issuer">MongoDB University</p>
+          </div>
+          <a href="profile/mongo db.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Network Defense</h3>
+            <p class="cert-issuer">Cisco / Cybersecurity</p>
+          </div>
+          <a href="profile/Network_Defense_certificate.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="550">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fab fa-java"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Sololearn Java</h3>
+            <p class="cert-issuer">SoloLearn</p>
+          </div>
+          <a href="profile/solo learn java c.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+        <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="cert-shine"></div>
+          <div class="cert-icon-wrap"><i class="fas fa-trophy"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name font-sora">Tata Crucible Prelims</h3>
+            <p class="cert-issuer">Tata Crucible Quiz</p>
+          </div>
+          <a href="profile/Tata_Cruible_Prelims_Level1.pdf" target="_blank" class="cert-btn">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS & INTERESTS SECTION ========== -->
+  <section id="achievements" class="section">
+    <div class="section-container">
+      <div class="achievements-interests-grid">
+
+        <!-- Achievements -->
+        <div>
+          <div class="section-header section-header-left" data-aos="fade-right">
+            <p class="section-sub font-mono">Recognition</p>
+            <h2 class="section-title font-sora">Achieve<span class="gold-text">ments</span></h2>
+            <div class="title-line"></div>
+          </div>
+          <div class="achieve-list">
+            <div class="achieve-card glass-card" data-aos="fade-right" data-aos-delay="0">
+              <div class="achieve-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="achieve-content">
+                <h3 class="achieve-title font-sora">Website Bootcamp</h3>
+                <p class="achieve-desc">Active participant in intensive website development bootcamp program, gaining hands-on experience.</p>
+              </div>
+              <div class="achieve-badge"><i class="fas fa-medal"></i></div>
+            </div>
+            <div class="achieve-card glass-card" data-aos="fade-right" data-aos-delay="100">
+              <div class="achieve-icon"><i class="fas fa-question-circle"></i></div>
+              <div class="achieve-content">
+                <h3 class="achieve-title font-sora">Quiz Participant</h3>
+                <p class="achieve-desc">Participated in competitive academic quiz programs demonstrating knowledge and quick thinking.</p>
+              </div>
+              <div class="achieve-badge"><i class="fas fa-medal"></i></div>
+            </div>
+            <div class="achieve-card glass-card" data-aos="fade-right" data-aos-delay="200">
+              <div class="achieve-icon"><i class="fas fa-pen-nib"></i></div>
+              <div class="achieve-content">
+                <h3 class="achieve-title font-sora">Creative Writing Competition</h3>
+                <p class="achieve-desc">Participant in creative writing competitions, showcasing literary creativity and storytelling ability.</p>
+              </div>
+              <div class="achieve-badge"><i class="fas fa-medal"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div>
+          <div class="section-header section-header-left" data-aos="fade-left">
+            <p class="section-sub font-mono">Passions</p>
+            <h2 class="section-title font-sora">Inter<span class="gold-text">ests</span></h2>
+            <div class="title-line"></div>
+          </div>
+          <div class="interests-grid">
+            <div class="interest-card glass-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="interest-icon-wrap">
+                <i class="fas fa-chess"></i>
+              </div>
+              <h3 class="interest-title font-sora">Chess</h3>
+              <p class="interest-desc">Strategic thinking and mental agility through the royal game.</p>
+            </div>
+            <div class="interest-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="interest-icon-wrap">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3 class="interest-title font-sora">Drawing</h3>
+              <p class="interest-desc">Expressing creativity through artistic illustration and sketching.</p>
+            </div>
+            <div class="interest-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="interest-icon-wrap">
+                <i class="fas fa-book"></i>
+              </div>
+              <h3 class="interest-title font-sora">Writing eBooks</h3>
+              <p class="interest-desc">Authoring digital books combining knowledge and storytelling.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section dark-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-sub font-mono">Get in touch</p>
+        <h2 class="section-title font-sora">Let's <span class="gold-text">Connect</span></h2>
+        <div class="title-line"></div>
+        <p class="contact-cta-text">"Let's build something amazing together."</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info-col" data-aos="fade-right">
+          <div class="contact-info-card glass-card">
+            <h3 class="contact-info-title font-sora">Reach Out</h3>
+            <p class="contact-info-desc">I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.</p>
+
+            <div class="contact-detail-list">
+              <div class="contact-detail-item">
+                <div class="contact-icon-wrap"><i class="fas fa-envelope"></i></div>
+                <div class="contact-detail-text">
+                  <p class="cd-label">Email</p>
+                  <a href="mailto:puvishasundar637@gmail.com" class="cd-value">puvishasundar637@gmail.com</a>
+                  <button class="copy-btn" onclick="copyEmail()" title="Copy email">
+                    <i class="fas fa-copy" id="copy-icon"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-icon-wrap"><i class="fas fa-phone"></i></div>
+                <div class="contact-detail-text">
+                  <p class="cd-label">Phone</p>
+                  <a href="tel:7339069632" class="cd-value">+91 7339069632</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-icon-wrap"><i class="fab fa-linkedin-in"></i></div>
+                <div class="contact-detail-text">
+                  <p class="cd-label">LinkedIn</p>
+                  <a href="https://www.linkedin.com/in/puvisha-sundar-79235737a/" target="_blank" class="cd-value">Puvisha Sundar</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-icon-wrap"><i class="fab fa-github"></i></div>
+                <div class="contact-detail-text">
+                  <p class="cd-label">GitHub</p>
+                  <a href="https://github.com/puvishasundar" target="_blank" class="cd-value">@puvishasundar</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://github.com/puvishasundar" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/puvisha-sundar-79235737a/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="mailto:puvishasundar637@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-col" data-aos="fade-left">
+          <div class="contact-form-card glass-card">
+            <h3 class="contact-form-title font-sora">Send a Message</h3>
+            <div id="contact-form">
+              <div class="form-row">
+                <div class="float-label-group">
+                  <input type="text" id="contact-name" class="float-input" placeholder=" " autocomplete="off" />
+                  <label for="contact-name" class="float-label">Your Name</label>
+                </div>
+                <div class="float-label-group">
+                  <input type="email" id="contact-email" class="float-input" placeholder=" " autocomplete="off" />
+                  <label for="contact-email" class="float-label">Your Email</label>
+                </div>
+              </div>
+              <div class="float-label-group">
+                <input type="text" id="contact-subject" class="float-input" placeholder=" " autocomplete="off" />
+                <label for="contact-subject" class="float-label">Subject</label>
+              </div>
+              <div class="float-label-group">
+                <textarea id="contact-message" class="float-textarea" placeholder=" " rows="5"></textarea>
+                <label for="contact-message" class="float-label">Your Message</label>
+              </div>
+              <button type="button" class="btn-submit" onclick="submitForm()">
+                <span class="submit-text"><i class="fas fa-paper-plane mr-2"></i> Send Message</span>
+                <span class="submit-loader" style="display:none"><i class="fas fa-spinner fa-spin mr-2"></i> Sending...</span>
+              </button>
+              <div id="form-success" class="form-success" style="display:none">
+                <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-glow-line"></div>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo font-sora">PS<span class="footer-logo-dot">.</span></a>
+          <p class="footer-tagline">Building innovative digital experiences through AI, web technologies, and creative problem solving.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title font-sora">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#internships">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title font-sora">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/puvishasundar" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/puvisha-sundar-79235737a/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:puvishasundar637@gmail.com">Email</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy font-mono">© 2024 Puvisha Sundar. Crafted with <span class="gold-text">♥</span> and lots of ☕</p>
+        <div class="footer-socials">
+          <a href="https://github.com/puvishasundar" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/puvisha-sundar-79235737a/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:puvishasundar637@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
